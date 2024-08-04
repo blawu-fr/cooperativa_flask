@@ -19,6 +19,8 @@ class ModelUser():
         except Exception as ex:
             raise Exception(ex)
         
+    #casi identico al metodo login, solo que aqui se busca por el id (en el login es por el email) 
+    # y este metodo no jala la contraseña
     @classmethod
     def get_by_id(self,db,id):
         try:

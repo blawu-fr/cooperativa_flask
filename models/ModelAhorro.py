@@ -17,6 +17,7 @@ class ModelAhorro:
             raise Exception(ex)
 
 
+
     @classmethod
     def get_total_ahorros_by_user_id(cls, db, user_id):
         try:

@@ -4,5 +4,6 @@
 
 {% block body %}
 <h1>Bienvenido, {{ current_user.nombre}}</h1>
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 <a class="btn btn-secondary" href="{{ url_for('logout') }}">Logout</a>
 {% endblock %}

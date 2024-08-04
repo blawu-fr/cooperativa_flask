@@ -4,20 +4,6 @@
 {% block body %}
 <div class="admin-container">
 
-    {% with messages = get_flashed_messages() %}
-
-    {% if messages %}
-    <br />
-    {% for message in messages %}
-    <div class="alert alert-primary alert-dismissible" role="alert">
-        <strong>{{ message }}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endfor %}
-    {% endif %}
-
-    {% endwith %}
-
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <header class="admin-header">
         <h1><i class="fas fa-users"></i> Admin - User Management</h1>
