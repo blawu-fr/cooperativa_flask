@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Ahorros{% endblock %}
+
+{%block customCSS %} <link rel="stylesheet" href="{{ url_for('static', filename='css/ahorros.css') }}"> {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mt-5">Mis Ahorros</h1>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ahorro in ahorros %}
+            <tr>
+                <td>{{ ahorro.id }}</td>
+                <td>{{ ahorro.monto }}</td>
+                <td>{{ ahorro.fecha_ahorro }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

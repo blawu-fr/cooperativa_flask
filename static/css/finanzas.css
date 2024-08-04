@@ -1,0 +1,120 @@
+/* finanzas.css (Mejorado) */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    background-color: #f4f4f4; /* Fondo suave */
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+h1, h2 {
+    color: #2980b9; /* Color de acento (azul) */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.lead {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #2980b9; /* Color de encabezado (azul) */
+    color: white;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Filas alternadas */
+}
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.financial-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.summary-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.summary-card h2 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background-color: #2980b9;
+    color: white;
+}
+
+.tab-content {
+    display: none; /* Ocultar por defecto */
+}
+
+.tab-content.active {
+    display: block; /* Mostrar si está activo */
+}

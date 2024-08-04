@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Préstamos{% endblock %}
+
+{%block customCSS %} <link rel="stylesheet" href="{{ url_for('static', filename='css/prestamos.css') }}"> {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mt-5">Mis Préstamos</h1>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Monto</th>
+                <th>Tasa de Interés</th>
+                <th>Plazo</th>
+                <th>Fecha de Préstamo</th>
+                <th>Fecha de Pago</th>
+                <th>Tipo de Cuenta</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prestamo in prestamos %}
+            <tr>
+                <td>{{ prestamo.id }}</td>
+                <td>{{ prestamo.monto }}</td>
+                <td>{{ prestamo.tasa_interes }}</td>
+                <td>{{ prestamo.plazo }}</td>
+                <td>{{ prestamo.fecha_prestamo }}</td>
+                <td>{{ prestamo.fecha_pago_prestamo }}</td>
+                <td>{{ prestamo.tipo_cuenta }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

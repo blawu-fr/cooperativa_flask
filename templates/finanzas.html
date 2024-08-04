@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Finanzas{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/finanzas.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+    <br />
+    {% for message in messages %}
+    <div class="alert alert-primary alert-dismissible" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% endwith %}
+
+    <div class="dashboard-header">
+        <h1>Mis Finanzas</h1>
+        <p class="lead">Resumen de tus ahorros, aportaciones y préstamos.</p>
+    </div>
+
+    <div class="financial-summary">
+        <div class="summary-card">
+            <h2>Total Ahorros</h2>
+            <p>{{ total_ahorros }}</p> 
+        </div>
+        <div class="summary-card">
+            <h2>Total Aportaciones</h2>
+            <p>{{ total_aportaciones }}</p> 
+        </div>
+        <div class="summary-card">
+            <h2>Total Préstamos</h2>
+            <p>{{ total_prestamos }}</p> 
+        </div>
+    </div>
+
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    <div class="tabs">
+        <button class="tab active" data-tab="ahorros">Ahorros</button>
+        <button class="tab" data-tab="aportaciones">Aportaciones</button>
+        <button class="tab" data-tab="prestamos">Préstamos</button>
+    </div>
+
+    <div id="ahorros" class="tab-content active">
+        <h2>Mis Ahorros</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ahorro in ahorros %}
+                <tr>
+                    <td>{{ ahorro.id }}</td>
+                    <td>{{ ahorro.monto }}</td>
+                    <td>{{ ahorro.fecha_ahorro }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="aportaciones" class="tab-content">
+        <h2>Mis Aportaciones</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for aportacion in aportaciones %}
+                <tr>
+                    <td>{{ aportacion.id }}</td>
+                    <td>{{ aportacion.monto }}</td>
+                    <td>{{ aportacion.fecha_aportacion }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="prestamos" class="tab-content">
+        <h2>Mis Préstamos</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Monto</th>
+                    <th>Tasa de Interés</th>
+                    <th>Plazo</th>
+                    <th>Fecha de Préstamo</th>
+                    <th>Fecha de Pago</th>
+                    <th>Tipo de Cuenta</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prestamo in prestamos %}
+                <tr>
+                    <td>{{ prestamo.id }}</td>
+                    <td>{{ prestamo.monto }}</td>
+                    <td>{{ prestamo.tasa_interes }}</td>
+                    <td>{{ prestamo.plazo }}</td>
+                    <td>{{ prestamo.fecha_prestamo }}</td>
+                    <td>{{ prestamo.fecha_pago_prestamo }}</td>
+                    <td>{{ prestamo.tipo_cuenta }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="btn btn-secondary mt-3">Cerrar Sesión</a>
+</div>
+
+
+<script>
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === tab.dataset.tab) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

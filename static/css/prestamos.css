@@ -1,0 +1,31 @@
+/* prestamos.css */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #FF5722;
+    text-align: center;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: #fff3e0;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #ffe0b2;
+}
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}

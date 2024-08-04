@@ -1,0 +1,109 @@
+/* admin.css */
+.admin-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #24355c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.admin-header h1 {
+    margin: 0;
+}
+.admin-main {
+    display: flex; /* Flexbox para organizar secciones */
+    gap: 20px;
+}
+.user-table-section, .new-user-section {
+    flex: 1;  
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.logout-btn { 
+    background-color: #e83838;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Línea horizontal inferior */
+    border-right: 1px solid #ddd;  /* Línea vertical a la derecha */
+}
+.user-table th {
+    background-color: #f5f5f5;
+}
+.edit-form, .delete-form {
+    display: inline-block;
+}
+.edit-btn {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.delete-btn {
+    background-color: #f44336; /* Rojo */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.new-user-form {
+    display: flex;
+    flex-direction: column; 
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-control {
+    width: 250px; /* Ancho aumentado para los campos de edición */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.create-btn {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}

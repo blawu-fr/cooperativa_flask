@@ -1,0 +1,71 @@
+/* register.css */
+
+/* General styling for the form */
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+/* Styling for the image */
+.form-signin img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Styling for the input fields */
+.form-signin .form-floating {
+    margin-bottom: 10px;
+}
+
+/* Styling for the submit button */
+.form-signin .btn {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+}
+
+/* Styling for the alert messages */
+.alert {
+    margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .form-signin {
+        padding: 10px;
+    }
+}
+
+/* Styling for the labels */
+.form-signin label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Styling for the floating labels */
+.form-signin .form-floating > .form-control:focus ~ label,
+.form-signin .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    opacity: 1;
+    transform: scale(.85) translateY(-1.5rem) translateX(.15rem);
+}
+
+/* Adding custom background color and padding */
+body {
+    background-color: #f7f7f7;
+    padding: 40px 0;
+}
+
+/* Styling for the heading */
+.form-signin h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* Styling for the text */
+.text-body-secondary {
+    color: #6c757d;
+}
