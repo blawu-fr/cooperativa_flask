@@ -11,7 +11,7 @@
 <div class="container">
 
     <div class="dashboard-header">
-        <h1>Mis Finanzas</h1>
+        <h1>CoopFinance - Tus finanzas</h1>
         <p class="lead">Resumen de tus ahorros, aportaciones y préstamos.</p>
     </div>
 
@@ -36,6 +36,7 @@
         <button class="tab active" data-tab="ahorros">Ahorros</button>
         <button class="tab" data-tab="aportaciones">Aportaciones</button>
         <button class="tab" data-tab="prestamos">Préstamos</button>
+        <button class="tab" data-tab="cuotas">Cuotas</button>
     </div>
 
     <div id="ahorros" class="tab-content active">
@@ -112,9 +113,33 @@
         </table>
     </div>
 
+    <div id="cuotas" class="tab-content">
+        <h2>Cuotas de Préstamos</h2>
+        {% for prestamo in prestamos %}
+        <h3>Cuotas del Préstamo ID {{ prestamo.id }}</h3>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Número de Cuota</th>
+                    <th>Fecha de Pago</th>
+                    <th>Monto de Cuota</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cuota in cuotas[prestamo.id] %}
+                <tr>
+                    <td>{{ cuota.numero_cuota }}</td>
+                    <td>{{ cuota.fecha_pago }}</td>
+                    <td>{{ cuota.monto_cuota }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+
     <a href="{{ url_for('logout') }}" class="btn btn-secondary mt-3">Cerrar Sesión</a>
 </div>
-
 
 <script>
     const tabs = document.querySelectorAll('.tab');

@@ -6,7 +6,8 @@
 
 {% block body %}
 <form class="form-signin" action="/login" method="POST">
-    <img class="mb-4" src="{{ url_for('static', filename='img/logo.jpg') }}" alt="" width="72" height="57">
+    
+    <img class="mb-4" src="{{ url_for('static', filename='img/logo_2.jpg') }}" alt="" width="72" height="57">
    
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -22,6 +23,6 @@
 
     <p class="text-center mt-3 register-link">No tienes cuenta? <a href="{{ url_for('register') }}">Registrate aqui</a></p> 
 
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024-CoopFinance</p>
 </form>
 {% endblock %}

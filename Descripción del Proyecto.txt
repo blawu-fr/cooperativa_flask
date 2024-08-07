@@ -1,0 +1,66 @@
+Descripción del Proyecto
+
+Este proyecto Flask implementa una aplicación web de gestión financiera personal que incluye características de autenticación de usuarios, visualización de datos financieros, administración de usuarios (para roles de administrador) y envío de recordatorios por correo electrónico.
+
+Estructura del Proyecto
+
+app.py: Contiene la lógica principal de la aplicación, las rutas, el manejo de sesiones de usuario, la interacción con la base de datos y la configuración de la aplicación.
+models/: Almacena las clases que interactúan con la base de datos (modelos) y las entidades que representan los objetos de datos (usuarios, ahorros, aportaciones, préstamos).
+config.py: Almacena la configuración de la aplicación, como detalles de conexión a la base de datos, configuración de correo electrónico y otros parámetros.
+templates/: Contiene los archivos HTML (Jinja2) que definen la estructura y el diseño de las diferentes páginas de la aplicación.
+static/: Almacena recursos estáticos como archivos CSS e imágenes.
+
+Funcionalidades Detalladas
+
+1. Autenticación de Usuarios
+
+Registro de Usuarios: Permite a los nuevos usuarios crear una cuenta proporcionando su correo electrónico (utilizado como nombre de usuario), contraseña, nombre, edad, dirección y número de teléfono. La contraseña se almacena de forma segura utilizando hashing para proteger la información del usuario.
+Inicio de Sesión: Permite a los usuarios existentes iniciar sesión con su correo electrónico y contraseña. El sistema valida las credenciales y, si son correctas, inicia la sesión del usuario. Los administradores son redirigidos a una página de administración, mientras que los usuarios regulares acceden a su panel financiero.
+Cierre de Sesión: Permite a los usuarios cerrar su sesión actual de forma segura.
+
+2. Gestión de Datos Financieros
+
+Visualización de Finanzas: Los usuarios pueden ver un resumen completo de sus finanzas personales, incluyendo:
+Ahorros: Lista detallada de todos los ahorros del usuario, incluyendo el monto y la fecha de cada ahorro, así como el total ahorrado.
+Aportaciones: Lista de las aportaciones realizadas por el usuario, mostrando el monto y la fecha de cada aportación, junto con el total de aportaciones.
+Préstamos: Información completa sobre los préstamos del usuario, incluyendo el monto, la tasa de interés, el plazo, la fecha del préstamo, la fecha de pago y el tipo de cuenta, además del total de préstamos pendientes.
+
+3. Administración de Usuarios (solo para administradores)
+
+Listado de Usuarios: Los administradores pueden ver una lista completa de todos los usuarios registrados en el sistema, incluyendo su ID, correo electrónico, nombre, edad, dirección y número de teléfono.
+Creación de Usuarios: Los administradores pueden crear nuevos usuarios directamente desde la interfaz de administración, proporcionando la misma información requerida durante el registro de usuario.
+Edición de Usuarios: Los administradores tienen la capacidad de modificar la información de cualquier usuario existente, incluyendo su correo electrónico, nombre, edad, dirección y número de teléfono.
+Eliminación de Usuarios: Los administradores pueden eliminar usuarios del sistema de forma permanente.
+
+4. Recordatorios de Pago de Préstamos
+
+Envío Automático de Correos Electrónicos: El sistema envía automáticamente correos electrónicos de recordatorio a los usuarios un día antes de la fecha de pago de sus préstamos.
+Programación de Tareas: La funcionalidad de envío de correos se ejecuta en segundo plano gracias a la biblioteca APScheduler, asegurando que los recordatorios se envíen de manera puntual sin afectar el rendimiento de la aplicación.
+Otras Consideraciones
+
+Seguridad: El proyecto implementa protección CSRF para prevenir ataques de falsificación de solicitudes entre sitios.
+Manejo de Errores: Se incluyen manejadores de errores personalizados para las páginas no encontradas (404) y para los usuarios no autorizados (401), mejorando la experiencia del usuario.
+Escalabilidad: La estructura del proyecto, basada en el patrón MVC, facilita la adición de nuevas funcionalidades y el mantenimiento a medida que la aplicación crece.
+
+Dependencias Clave
+
+Flask: El marco web principal.
+Flask-MySQLdb: Conexión a la base de datos MySQL.
+Flask-Login: Gestión de sesiones de usuario y autenticación.
+Flask-WTF: Protección contra CSRF (Cross-Site Request Forgery).
+Flask-Mail: Envío de correos electrónicos.
+werkzeug.security: Funciones para hashing de contraseñas.
+APScheduler: Programación de tareas en segundo plano.
+
+Instrucciones de Uso
+
+Clona o descarga el repositorio del proyecto.
+Configura el archivo config.py con tus datos de conexión a la base de datos y configuración de correo electrónico.
+Crea las tablas necesarias en tu base de datos MySQL.
+Ejecuta app.py para iniciar el servidor de desarrollo.
+
+Consideraciones Adicionales
+
+El proyecto está estructurado siguiendo el patrón Modelo-Vista-Controlador (MVC) para una mejor organización y mantenibilidad.
+Los comentarios en el código explican en detalle las diferentes partes de la aplicación.
+Para la producción, se recomienda usar un servidor WSGI (como Gunicorn) y configurar un entorno de producción en config.py.

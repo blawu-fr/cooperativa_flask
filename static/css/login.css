@@ -41,3 +41,7 @@ body{
 .register-link a {  
   margin-left: 5px;  /* Add some space between the text and link */
 }
+
+.btn-primary{
+  background-color: #148936;
+}

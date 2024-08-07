@@ -69,3 +69,7 @@ body {
 .text-body-secondary {
     color: #6c757d;
 }
+
+.btn-primary{
+    background-color: #148936;
+}

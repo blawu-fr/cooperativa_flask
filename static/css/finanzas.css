@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2 {
-    color: #2980b9; /* Color de acento (azul) */
+    color: #148936; /* Color de acento (azul) */
     text-align: center;
 }
 
@@ -51,7 +51,7 @@ h2 {
 }
 
 .table th {
-    background-color: #2980b9; /* Color de encabezado (azul) */
+    background-color: #148936; /* Color de encabezado (azul) */
     color: white;
 }
 
@@ -87,7 +87,7 @@ h2 {
 }
 
 .summary-card h2 {
-    color: #2980b9;
+    color: #148936;
     margin-bottom: 10px;
 }
 
@@ -107,7 +107,7 @@ h2 {
 }
 
 .tab.active {
-    background-color: #2980b9;
+    background-color: #f0e70d;
     color: white;
 }
 

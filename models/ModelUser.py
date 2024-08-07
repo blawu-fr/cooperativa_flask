@@ -89,3 +89,18 @@ class ModelUser():
             return True
         except Exception as ex:
             raise Exception(ex)
+        
+    @classmethod
+    def get_user_by_email_and_phone(cls, db, email, telefono):
+        try:
+            cursor = db.connection.cursor()
+            sql = """SELECT usuario_id FROM usuarios 
+                    WHERE email = %s AND telefono = %s"""
+            cursor.execute(sql, (email, telefono))
+            row = cursor.fetchone()
+            if row:
+                return row[0]
+            else:
+                return None
+        except Exception as ex:
+            raise Exception(ex)

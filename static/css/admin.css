@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #24355c;
+    background-color: #148936;
     color: #fff;
     padding: 10px 20px;
     border-radius: 8px;
@@ -21,11 +21,11 @@
     margin: 0;
 }
 .admin-main {
-    display: flex; /* Flexbox para organizar secciones */
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
-.user-table-section, .new-user-section {
-    flex: 1;  
+.user-table-section, .new-user-section, .new-loan-section {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
@@ -82,7 +82,19 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.new-user-form {
+.view-loans-btn {
+    background-color: #f0e70d; /* Rojo */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.new-user-form, .new-loan-form {
     display: flex;
     flex-direction: column; 
 }
@@ -90,7 +102,7 @@
     margin-bottom: 15px;
 }
 .form-control {
-    width: 250px; /* Ancho aumentado para los campos de edición */
+    width: 100%; 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -106,4 +118,8 @@
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+}
+.new-loan-section {
+    max-width: 600px;
+    margin: 0 auto;
 }

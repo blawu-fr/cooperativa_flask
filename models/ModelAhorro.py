@@ -1,4 +1,5 @@
 from .entities.Ahorro import Ahorro
+from datetime import datetime
 
 class ModelAhorro:
     @classmethod
@@ -28,3 +29,15 @@ class ModelAhorro:
             return row[0] if row[0] else 0.0
         except Exception as ex:
             raise Exception(ex) 
+        
+
+    @classmethod
+    def insert_ahorro(cls, db, usuario_id, monto):
+        try:
+            cursor = db.connection.cursor()
+            sql = """INSERT INTO Ahorros (usuario_id, monto) VALUES (%s, %s)"""
+            values = (usuario_id, monto)
+            cursor.execute(sql, values)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
